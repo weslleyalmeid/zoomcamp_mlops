@@ -1,0 +1,57 @@
+{
+    "os": "Linux-6.2.6-76060206-generic-x86_64-with-glibc2.17",
+    "python": "3.8.13",
+    "heartbeatAt": "2023-06-06T22:19:55.040955",
+    "startedAt": "2023-06-06T22:19:53.780700",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "02_hyperparameter_optimization.py",
+    "codePath": "mlops-zoomcamp/02-experiment-tracking/mlops-zoomcamp-wandb/02_hyperparameter_optimization.py",
+    "git": {
+        "remote": "git@github.com:weslleyalmeid/MLEngineer-Studies.git",
+        "commit": "41aa842d41057e9825d0b8eba7a0130f06202f6f"
+    },
+    "email": "weslley_fac@hotmail.com",
+    "root": "/home/wa/PROJETOS/MLEngineer-Studies",
+    "host": "pop-os",
+    "username": "wa",
+    "executable": "/home/wa/miniconda3/envs/venv_mlengineer/bin/python3",
+    "cpu_count": 2,
+    "cpu_count_logical": 4,
+    "cpu_freq": {
+        "current": 2382.4030000000002,
+        "min": 800.0,
+        "max": 2700.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2294.832,
+            "min": 800.0,
+            "max": 2700.0
+        },
+        {
+            "current": 2294.833,
+            "min": 800.0,
+            "max": 2700.0
+        },
+        {
+            "current": 2294.831,
+            "min": 800.0,
+            "max": 2700.0
+        },
+        {
+            "current": 2294.833,
+            "min": 800.0,
+            "max": 2700.0
+        }
+    ],
+    "disk": {
+        "total": 210.64599227905273,
+        "used": 192.52459716796875
+    },
+    "memory": {
+        "total": 7.614444732666016
+    }
+}

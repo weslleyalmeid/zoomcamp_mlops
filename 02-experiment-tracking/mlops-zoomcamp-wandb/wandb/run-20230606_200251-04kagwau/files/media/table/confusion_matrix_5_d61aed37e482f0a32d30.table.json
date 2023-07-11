@@ -1,0 +1,1 @@
+{"columns": ["Predicted", "Actual", "Count"], "data": [["Not-Survived", "Not-Survived", 99], ["Not-Survived", "Survived", 16], ["Survived", "Not-Survived", 16], ["Survived", "Survived", 48]]}

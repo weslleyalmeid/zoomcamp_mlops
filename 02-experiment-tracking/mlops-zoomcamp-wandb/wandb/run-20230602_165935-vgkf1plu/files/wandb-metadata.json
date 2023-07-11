@@ -1,0 +1,56 @@
+{
+    "os": "Linux-6.2.6-76060206-generic-x86_64-with-glibc2.17",
+    "python": "3.8.13",
+    "heartbeatAt": "2023-06-02T19:59:36.538850",
+    "startedAt": "2023-06-02T19:59:35.336523",
+    "docker": null,
+    "cuda": null,
+    "args": null,
+    "state": "running",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "git@github.com:weslleyalmeid/MLEngineer-Studies.git",
+        "commit": "41aa842d41057e9825d0b8eba7a0130f06202f6f"
+    },
+    "email": "weslley_fac@hotmail.com",
+    "root": "/home/wa/PROJETOS/MLEngineer-Studies",
+    "host": "pop-os",
+    "username": "wa",
+    "executable": "/home/wa/miniconda3/envs/venv_mlengineer/bin/python",
+    "cpu_count": 2,
+    "cpu_count_logical": 4,
+    "cpu_freq": {
+        "current": 2494.3334999999997,
+        "min": 800.0,
+        "max": 2700.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2494.281,
+            "min": 800.0,
+            "max": 2700.0
+        },
+        {
+            "current": 2496.748,
+            "min": 800.0,
+            "max": 2700.0
+        },
+        {
+            "current": 2494.351,
+            "min": 800.0,
+            "max": 2700.0
+        },
+        {
+            "current": 2496.452,
+            "min": 800.0,
+            "max": 2700.0
+        }
+    ],
+    "disk": {
+        "total": 210.64599227905273,
+        "used": 179.80562210083008
+    },
+    "memory": {
+        "total": 7.614444732666016
+    }
+}

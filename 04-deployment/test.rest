@@ -1,0 +1,13 @@
+POST http://localhost:9696/predict
+Content-Type: application/json
+
+{
+"PULocationID": 10,
+"DOLocationID": 50,
+"trip_distance": 40
+}
+
+
+# GET https://api.example.com/users
+
+# @header Authorization: Bearer <token>

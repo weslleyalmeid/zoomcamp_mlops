@@ -1,0 +1,16 @@
+wandb_version: 1
+
+bootstrap:
+  value: false
+class_weight:
+  value: balanced_subsample
+max_depth:
+  value: 15
+min_samples_leaf:
+  value: 3
+min_samples_split:
+  value: 9
+n_estimators:
+  value: 45
+warm_start:
+  value: false

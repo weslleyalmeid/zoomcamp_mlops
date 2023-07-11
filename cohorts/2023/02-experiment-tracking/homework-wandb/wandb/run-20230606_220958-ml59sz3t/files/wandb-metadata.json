@@ -1,0 +1,64 @@
+{
+    "os": "Linux-6.2.6-76060206-generic-x86_64-with-glibc2.17",
+    "python": "3.8.13",
+    "heartbeatAt": "2023-06-07T01:09:59.108023",
+    "startedAt": "2023-06-07T01:09:58.247135",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--wandb_project",
+        "wb_homework",
+        "--wandb_entity",
+        "weslleyalmeid",
+        "--data_artifact",
+        "weslleyalmeid/wb_homework/NYC-Taxi:v0"
+    ],
+    "state": "running",
+    "program": "sweep.py",
+    "codePath": "mlops-zoomcamp/cohorts/2023/02-experiment-tracking/homework-wandb/sweep.py",
+    "git": {
+        "remote": "git@github.com:weslleyalmeid/MLEngineer-Studies.git",
+        "commit": "41aa842d41057e9825d0b8eba7a0130f06202f6f"
+    },
+    "email": "weslley_fac@hotmail.com",
+    "root": "/home/wa/PROJETOS/MLEngineer-Studies",
+    "host": "pop-os",
+    "username": "wa",
+    "executable": "/home/wa/miniconda3/envs/venv_mlengineer/bin/python3",
+    "cpu_count": 2,
+    "cpu_count_logical": 4,
+    "cpu_freq": {
+        "current": 2494.3672500000002,
+        "min": 800.0,
+        "max": 2700.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2494.383,
+            "min": 800.0,
+            "max": 2700.0
+        },
+        {
+            "current": 2494.407,
+            "min": 800.0,
+            "max": 2700.0
+        },
+        {
+            "current": 2495.98,
+            "min": 800.0,
+            "max": 2700.0
+        },
+        {
+            "current": 2494.376,
+            "min": 800.0,
+            "max": 2700.0
+        }
+    ],
+    "disk": {
+        "total": 210.64599227905273,
+        "used": 192.6251983642578
+    },
+    "memory": {
+        "total": 7.614444732666016
+    }
+}
