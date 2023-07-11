@@ -8,14 +8,9 @@ data/
 .bin
 *.db
 
-
 *.parquet
 *.html
 *.csv
-
-!/mlops-zoomcamp/03-orchestration/3.4/data_pref/green_tripdata_2021-01.parquet
-!/mlops-zoomcamp/03-orchestration/3.4/data_pref/green_tripdata_2021-02.parquet
-!/mlops-zoomcamp/03-orchestration/3.4/data_pref/*.parquet
 
 .venv
 venv
@@ -354,3 +349,10 @@ pip-selfcheck.json
 # Support for Project snippet scope
 
 # End of https://www.toptal.com/developers/gitignore/api/python,virtualenv,visualstudiocode,compressedarchive
+
+
+!/mlops-zoomcamp/03-orchestration/3.4/data_pref/green_tripdata_2021-01.parquet
+!/mlops-zoomcamp/03-orchestration/3.4/data_pref/green_tripdata_2021-02.parquet
+!/mlops-zoomcamp/03-orchestration/3.4/data_pref/*.parquet
+!/06-best-practices/code/scripts/*
+

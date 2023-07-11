@@ -105,7 +105,17 @@ env variables to the `docker-compose.yaml` file:
 - AWS_SECRET_ACCESS_KEY=xyz
 ```
 
-### Code Quality
+- repo: local
+  hooks:
+    - id: pytest-check
+      name: pytest-check
+      entry: pytest
+      language: system
+      pass_filenames: false
+      always_run: true
+      args: [
+        "tests/"
+      ]
 
 #### Linter
 
@@ -149,6 +159,32 @@ black .
 isort --diff . | less
 ```
 
+### Pre-commits hooks
+
+```sh
+# normaly use in root path repo, but for test init git in internal folder
+git init 
+
+# create pre-commit file
+# after changed in file, include automatics steps linter, black, pytest, isort
+pre-commit sample-config > ./.pre-commit-config.yaml
+
+# install pre-commit hook
+pre-commit install
+
+
+# now, before really commit, run personal steps available test in the files
+git add .
+git commit -am 'blabla'
+
+# if detect error
+git diff .
+
+# check corrections and commit again
+git commit -am 'fix: blabla'
+```
+
+
 ### Make
 
 Without make:
@@ -168,7 +204,7 @@ make test
 ```
 
 
-To prepare the project, run 
+To prepare the project, run
 
 ```bash
 make setup
@@ -187,7 +223,7 @@ w/ Terraform
 
 **Configuration**:
 
-1. If you've already created an AWS account, head to the IAM section, generate your secret-key, and download it locally. 
+1. If you've already created an AWS account, head to the IAM section, generate your secret-key, and download it locally.
 [Instructions](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-prereqs.html)
 
 2. [Configure]((https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html)) `aws-cli` with your downloaded AWS secret keys:
@@ -204,7 +240,7 @@ w/ Terraform
         $ aws sts get-caller-identity
       ```
 
-4. (Optional) Configuring with `aws profile`: [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-sourcing-external.html) and [here](https://registry.terraform.io/providers/hashicorp/aws/latest/docs#using-an-external-credentials-process) 
+4. (Optional) Configuring with `aws profile`: [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-sourcing-external.html) and [here](https://registry.terraform.io/providers/hashicorp/aws/latest/docs#using-an-external-credentials-process)
 
 <br>
 
@@ -233,7 +269,7 @@ w/ Terraform
 3. To test the pipeline end-to-end with our new cloud infra:
     ```
     . ./scripts/test_cloud_e2e.sh
-    ``` 
+    ```
 
 4. And then check on CloudWatch logs. Or try `get-records` on the `output_kinesis_stream` (refer to `integration_test`)
 
@@ -256,4 +292,3 @@ w/ Terraform
 
 * Unfortunately, the `RUN_ID` (if set via the `ENV` or `ARG` in `Dockerfile`), disappears during lambda invocation.
 We'll set it via `aws lambda update-function-configuration` CLI command (refer to `deploy_manual.sh` or `.github/workflows/cd-deploy.yml`)
-    
