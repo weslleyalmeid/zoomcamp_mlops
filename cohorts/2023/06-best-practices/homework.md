@@ -21,6 +21,10 @@ Now we need to create the "main" block from which we'll invoke
 the main function. How does the `if` statement that we use for
 this looks like? 
 
+```py
+if __name__ == '__main__':
+```
+
 
 Hint: after refactoring, check that the code still works. Just run
 it e.g. for Feb 2022 and see if it finishes successfully. 
@@ -48,7 +52,7 @@ The second file will be `__init__.py`. So, why do we need this second file?
 
 - To define a package and specify its boundaries
 - To manage the import of modules from the package 
-- Both of the above options are correct
+- **Both of the above options are correct**
 - To initialize a new object
 
 
@@ -104,7 +108,7 @@ How many rows should be there in the expected dataframe?
 
 - 1
 - 2
-- 3
+- **3**
 - 4
 
 
@@ -122,19 +126,37 @@ keep the output. Let's call it "nyc-duration".
 
 With AWS CLI, this is how we create a bucket:
 
+aws --endpoint-url=http://localhost:4566 \
+    kinesis \
+    get-shard-iterator \
+    --shard-id ${SHARD} \
+    --shard-iterator-type TRIM_HORIZON \
+    --stream-name ${PREDICTIONS_STREAM_NAME} \
+    --query 'ShardIterator' \
+    --profile testelocal
+
+
+
 ```bash
-aws s3 mb s3://nyc-duration
+aws s3 mb 
+
+aws s3 mb \
+    s3://nyc-duration \
+    --endpoint-url=http://localhost:4566 \
+    --profile testelocal
 ```
 
 Then we need to check that the bucket was successfully created. With AWS, this is how we typically do it:
 
 ```bash
 aws s3 ls
+
+aws s3 ls --endpoint-url=http://localhost:4566 --profile testelocal
 ```
 
 In both cases we should adjust commands for localstack. Which option do we need to use for such purposes?
 
-- `--endpoint-url`
+- **`--endpoint-url`**
 - `--profile`
 - `--region`
 - `--version`
@@ -143,7 +165,7 @@ In both cases we should adjust commands for localstack. Which option do we need 
 ## Make input and output paths configurable
 
 Right now the input and output paths are hardcoded, but we want
-to change it for the tests. 
+to change it for the tests.
 
 One of the possible ways would be to specify `INPUT_FILE_PATTERN` and `OUTPUT_FILE_PATTERN` via the env 
 variables. Let's do that:
@@ -226,9 +248,35 @@ df_input.to_parquet(
 )
 ```
 
+
+Before execution, export variables
+```sh
+export INPUT_FILE_PATTERN="s3://nyc-duration/in/{year:04d}-{month:02d}.parquet"
+export OUTPUT_FILE_PATTERN="s3://nyc-duration/out/{year:04d}-{month:02d}.parquet"
+export S3_ENDPOINT_URL="http://localhost:4566"
+```
+
+Maybe necessary install
+```
+pip install fsspec s3fs 
+```
+
+```sh
+# show files in bucket
+aws s3 ls s3://nyc-duration/ \
+    --recursive --human-readable --summarize \
+    --endpoint-url=http://localhost:4566 \
+    --profile testelocal
+
+# delete files in bucket
+aws s3 rm --recursive \
+s3://nyc-duration/in/ \
+--endpoint-url=http://localhost:4566 \
+--profile testelocal
+```
 What's the size of the file?
 
-- 3667
+- **3667**
 - 23667
 - 43667
 - 63667
@@ -260,7 +308,7 @@ verify the result is correct.
 What's the sum of predicted durations for the test dataframe?
 
 - 10.50
-- 31.51
+- **31.51**
 - 59.28
 - 81.22
 

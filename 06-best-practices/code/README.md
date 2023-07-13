@@ -117,6 +117,17 @@ env variables to the `docker-compose.yaml` file:
         "tests/"
       ]
 
+
+#### Pytest
+required in name function started wit **test_blabla**
+```sh
+pytest tests
+
+
+# supress warnings
+pytest tests --disable-warnings
+```
+
 #### Linter
 
 The file pyproject.toml is responsible for interactions between linter and global documents.
