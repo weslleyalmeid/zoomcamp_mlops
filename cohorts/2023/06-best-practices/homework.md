@@ -126,17 +126,6 @@ keep the output. Let's call it "nyc-duration".
 
 With AWS CLI, this is how we create a bucket:
 
-aws --endpoint-url=http://localhost:4566 \
-    kinesis \
-    get-shard-iterator \
-    --shard-id ${SHARD} \
-    --shard-iterator-type TRIM_HORIZON \
-    --stream-name ${PREDICTIONS_STREAM_NAME} \
-    --query 'ShardIterator' \
-    --profile testelocal
-
-
-
 ```bash
 aws s3 mb 
 
