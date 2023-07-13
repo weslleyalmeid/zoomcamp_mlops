@@ -184,7 +184,6 @@ git diff .
 git commit -am 'fix: blabla'
 ```
 
-
 ### Make
 
 Without make:

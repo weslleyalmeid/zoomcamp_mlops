@@ -16,7 +16,7 @@ integration_test: build
 	LOCAL_IMAGE_NAME=${LOCAL_IMAGE_NAME} bash integraton-test/run.sh
 
 publish: build integration_test
-	LOCAL_IMAGE_NAME=${LOCAL_IMAGE_NAME} bash scripts/publish.sh
+	LOCAL_IMAGE_NAME=${LOCAL_IMAGE_NAME} bash scripts_sh/publish.sh
 
 setup:
 	pipenv install --dev
